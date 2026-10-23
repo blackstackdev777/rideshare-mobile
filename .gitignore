@@ -1,0 +1,25 @@
+.env
+.env.*
+!.env.example
+
+# Generated dependencies, builds, logs and local temporary files.
+node_modules/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+*.log
+*.tmp
+*.temp
+.tmp/
+.DS_Store
+Thumbs.db
+
+# Private keys and local credential exports.
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+tokens*.json

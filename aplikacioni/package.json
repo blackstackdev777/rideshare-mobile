@@ -6,20 +6,36 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test:db": "node scripts/test-database.mjs",
+    "verify:week5-data": "node scripts/verify-week5-data.mjs",
+    "test:data": "node --conditions=react-server scripts/test-data.mjs",
+    "test:routes": "node scripts/test-routes.mjs",
+    "test:network": "node scripts/test-network-outage.mjs",
+    "test:week56": "node scripts/test-week56.mjs",
+    "test:auth-config": "node scripts/test-auth-config.mjs",
+    "test:auth": "npm run test:auth-config && npm run test:week56 && npm run test:week56 -- --auth-aliases",
+    "test:pwa": "node scripts/test-pwa.mjs",
+    "test:production": "node scripts/test-production-readonly.mjs",
+    "test": "npm run test:data && npm run test:pwa && npm run test:auth && npm run test:network",
+    "audit:week56-db": "node scripts/audit-week56-db.mjs"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.2.0",
     "next": "^15.5.0",
+    "next-auth": "4.24.15",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.0.0",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "typescript": "^5.0.0",
     "eslint": "^9.0.0",
     "eslint-config-next": "^15.5.0",
-    "@eslint/eslintrc": "^3.0.0"
+    "typescript": "^5.0.0"
   }
 }
